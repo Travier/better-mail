@@ -1,0 +1,17 @@
+{
+    "name": "travier/better-mail",
+    "description": "Override PHP mail() with Mailgun",
+    "type": "library",
+    "require": {
+        "mailgun/mailgun-php": "^2.5",
+        "guzzlehttp/guzzle": "~6.0",
+        "php-http/guzzle6-adapter": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Travier Moorlag",
+            "email": "moorlagt@gmail.com"
+        }
+    ]
+}
