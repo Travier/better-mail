@@ -1,7 +1,11 @@
 # BetterMail
 Override PHP mail() with a different sending solution
 
-Simple Example:
+PHP RunKit extention is required
+https://gist.github.com/tortuetorche/6700217
+#### Why do this?
+A fix for legacy PHP codebases that littered mail() throughout the code base. This hack lets you replace the mail() function with a different sending solution rather than refactor the code base. 
+#### Simple Example:
 ```php
 use Travier\BetterMail\Override;
 
@@ -16,7 +20,7 @@ mail("Hello, World!")
 //results: "Hello, World!" to the screen
 ```
 
-Replace mail() with Mailgun interface:
+#### Replace mail() with Mailgun interface:
 ```php
 use Travier\BetterMail\Interfaces\MailgunInterface;
 
