@@ -31,7 +31,7 @@ class MailgunInterface {
         ]);
     }
 
-    public function replace() 
+    public function override() 
     {
         $self = $this;
         Override::func('mail', function($to, $subject, $message, $headers = false) use($self) {

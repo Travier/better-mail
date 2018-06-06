@@ -11,6 +11,6 @@ $mail = new MailgunInterface($apiKey, $domain);
 //set from address
 $mail->setFromAddress("test@gmail.com");
 //redefine mail() to use Mailgun interface;
-$mail->replace();
+$mail->override();
 
 mail("test@gmail.com", "Testing", "Hello");
