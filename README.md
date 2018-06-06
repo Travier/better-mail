@@ -35,4 +35,4 @@ $mail->setFromAddress("test@gmail.com");
 $mail->override();
 
 mail("test@gmail.com", "Testing", "Hello");
-``
+```
