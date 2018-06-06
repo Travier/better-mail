@@ -1,18 +1,16 @@
 <?php
 //how to install runkit https://gist.github.com/tortuetorche/6700217
 require('vendor/autoload.php');
-require('src/bettermail.php');
+use Travier\BetterMail\Interfaces\MailgunInterface;
 
 $apiKey = "";
-$mailgun = createMailgunInstance();
-overrideMail(function($to, $subject, $message) use($mailgun) {
-    $mailgun->sendMessage('domain', [
-        'from'    => 'from',
-        'to'      => 'to',
-        'subject' => $subject,
-        'text'    => $message
-      ]);
-});
+$domain = "";
 
-mail("from" , "Hello, World!", "Whats gucci?");
-?>
+//init mailgun
+$mail = new MailgunInterface($apiKey, $domain);
+//set from address
+$mail->setFromAddress("test@gmail.com");
+//redefine mail() to use Mailgun interface;
+$mail->replace();
+
+mail("test@gmail.com", "Testing", "Hello");
