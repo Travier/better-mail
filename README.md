@@ -7,6 +7,7 @@ https://gist.github.com/tortuetorche/6700217
 A fix for legacy PHP codebases that littered mail() throughout the code base. This hack lets you replace the mail() function with a different sending solution rather than refactor the code base. 
 #### Simple Example:
 ```php
+<?php
 use Travier\BetterMail\Override;
 
 mail('test@gmail.com', 'Subject', 'Message')
@@ -18,10 +19,12 @@ Override::func('mail', function($message) {
 
 mail("Hello, World!")
 //results: "Hello, World!" to the screen
+?>
 ```
 
 #### Replace mail() with Mailgun interface:
 ```php
+<?php
 use Travier\BetterMail\Interfaces\MailgunInterface;
 
 $apiKey = "";
@@ -35,4 +38,5 @@ $mail->setFromAddress("test@gmail.com");
 $mail->override();
 
 mail("test@gmail.com", "Testing", "Hello");
+?>
 ```
